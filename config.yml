@@ -1,4 +1,12 @@
 user:
    - "spzhuang"
-   - "xiaobao"
-   - "dajvmao"
+   - "王宝元"
+   - "大橘猫"
+   - "erik"
+   - "计量"
+   - "张彬" 
+   
+search:
+    url: "https://api.bing.microsoft.com/v7.0/search"
+    key: "c5_cb1_.23a51b_b^/1/b5`0a32055/5"
+        
