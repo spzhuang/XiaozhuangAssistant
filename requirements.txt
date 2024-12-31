@@ -123,11 +123,14 @@ mypy-extensions==1.0.0
     # via typing-inspect
 narwhals==1.19.1
     # via altair
+numexpr==2.10.2
+    # via -r requirements.in
 numpy==2.2.1
     # via
     #   faiss-cpu
     #   langchain
     #   langchain-community
+    #   numexpr
     #   pandas
     #   pydeck
     #   streamlit
@@ -162,6 +165,7 @@ pycparser==2.22
     # via cffi
 pydantic==2.10.4
     # via
+    #   -r requirements.in
     #   langchain
     #   langchain-core
     #   langsmith
