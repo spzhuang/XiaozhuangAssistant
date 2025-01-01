@@ -23,12 +23,13 @@ from langchain.agents import AgentExecutor, LLMSingleActionAgent, AgentOutputPar
 
 from langchain.utilities import BingSearchAPIWrapper
 from langchain.schema import AgentAction, AgentFinish, OutputParserException
-from langchain.chains import LLMChain, LLMMathChain
+from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.tools import Tool,tool
 from util import get_title_abstract,agent_template_zh,direct,query_about_pdf,decode_string,LoggingHandler2
 from util import CustomPromptTemplate,CustomOutputParser,Retriever,support_llm,support_embedding,get_date_now
 from pydantic import BaseModel, Field, validator
+from calculate import X_LLMMathChain
 
 from langchain.callbacks import StreamingStdOutCallbackHandler
 from streamlit.delta_generator import DeltaGenerator
@@ -55,7 +56,7 @@ class Conversation:
         embeddings_info = (factory,embedding_name,api_key):(str,str,str) 用来确定embedding的api调用信息
         """
         self.llm = support_llm[llm_info[0]](model=llm_info[1],api_key=llm_info[2],streaming=True)
-        llm_math_chain = LLMMathChain(llm=self.llm, verbose=False)
+        llm_math_chain = X_LLMMathChain.from_llm(llm=self.llm, verbose=False)
         
         self.embedding = support_embedding[embedding_info[0]](model=embedding_info[1],api_key=embedding_info[2])
 
