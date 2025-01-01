@@ -43,17 +43,25 @@ charset-normalizer==3.4.1
 click==8.1.8
     # via streamlit
 colorama==0.4.6
-    # via click
+    # via
+    #   click
+    #   tqdm
 cryptography==44.0.0
     # via pdfminer-six
 dataclasses-json==0.6.7
     # via langchain-community
 faiss-cpu==1.9.0.post1
     # via -r requirements.in
+filelock==3.16.1
+    # via
+    #   huggingface-hub
+    #   transformers
 frozenlist==1.5.0
     # via
     #   aiohttp
     #   aiosignal
+fsspec==2024.12.0
+    # via huggingface-hub
 gitdb==4.0.11
     # via gitpython
 gitpython==3.1.43
@@ -70,6 +78,10 @@ httpx==0.28.1
     #   zhipuai
 httpx-sse==0.4.0
     # via langchain-community
+huggingface-hub==0.27.0
+    # via
+    #   tokenizers
+    #   transformers
 idna==3.10
     # via
     #   anyio
@@ -134,15 +146,18 @@ numpy==2.2.1
     #   pandas
     #   pydeck
     #   streamlit
+    #   transformers
 orjson==3.10.12
     # via langsmith
 packaging==24.2
     # via
     #   altair
     #   faiss-cpu
+    #   huggingface-hub
     #   langchain-core
     #   marshmallow
     #   streamlit
+    #   transformers
 pandas==2.2.3
     # via streamlit
 pdfminer-six==20231228
@@ -198,20 +213,26 @@ pytz==2024.2
 pyyaml==6.0.2
     # via
     #   -r requirements.in
+    #   huggingface-hub
     #   langchain
     #   langchain-community
     #   langchain-core
+    #   transformers
 referencing==0.35.1
     # via
     #   jsonschema
     #   jsonschema-specifications
+regex==2024.11.6
+    # via transformers
 requests==2.32.3
     # via
+    #   huggingface-hub
     #   langchain
     #   langchain-community
     #   langsmith
     #   requests-toolbelt
     #   streamlit
+    #   transformers
 requests-toolbelt==1.0.0
     # via langsmith
 rich==13.9.4
@@ -220,6 +241,8 @@ rpds-py==0.22.3
     # via
     #   jsonschema
     #   referencing
+safetensors==0.4.5
+    # via transformers
 six==1.17.0
     # via python-dateutil
 smmap==5.0.1
@@ -242,14 +265,23 @@ tenacity==9.0.0
     #   langchain-community
     #   langchain-core
     #   streamlit
+tokenizers==0.21.0
+    # via transformers
 toml==0.10.2
     # via streamlit
 tornado==6.4.2
     # via streamlit
+tqdm==4.67.1
+    # via
+    #   huggingface-hub
+    #   transformers
+transformers==4.47.1
+    # via -r requirements.in
 typing-extensions==4.12.2
     # via
     #   altair
     #   anyio
+    #   huggingface-hub
     #   langchain-core
     #   pydantic
     #   pydantic-core
