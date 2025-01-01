@@ -159,17 +159,6 @@ class Conversation:
     def ask(self,query):
         response = self.agent_executor.stream(query)
         return response
-        # human_message = HumanMessage(query)
-        # if type(response)==dict:
-        #     if "output" in response:        
-        #         ai_message = AIMessage(response['output'])
-        #     else:
-        #         raise ValueError(f"Can't parse AI response {response}")
-        # elif type(response)==str:
-        #     ai_message = AIMessage(response)
-        # else:
-        #     raise ValueError(f"Can't parse AI response {response}")
-        # self.completion = [human_message,ai_message]
     
     def clean(self)->None:
         self.chain = None
